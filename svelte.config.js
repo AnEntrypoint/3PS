@@ -16,9 +16,9 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: undefined,
+			fallback: 'index.html',
 			precompress: false,
-			strict: true
+			strict: false
 		}),
 		files: {
 			assets: 'static'
@@ -26,6 +26,12 @@ const config = {
 		// Set base path for GitHub Pages subdirectory when not using custom domain
 		paths: {
 			base: dev ? '' : ghPages ? '/3PS' : ''
+		},
+		// Prerender configuration for static generation
+		prerender: {
+			handleHttpError: 'warn',
+			handleMissingId: 'warn',
+			entries: ['*']
 		}
 	}
 };
