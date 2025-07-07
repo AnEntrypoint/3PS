@@ -59,7 +59,6 @@
 	},
 	"dependencies": {
 		"@dimforge/rapier3d-compat": "^0.14.0",
-		"@octokit/rest": "^22.0.0",
 		"@theatre/core": "^0.7.2",
 		"@theatre/studio": "^0.7.2",
 		"@threlte/core": "^8.0.1",
@@ -71,11 +70,8 @@
 		"@threlte/xr": "^1.0.0",
 		"@types/three": "^0.173.0",
 		"embla-carousel-autoplay": "^8.5.2",
-		"github-pocket-db": "^1.0.1",
 		"lodash": "^4.17.21",
-		"pocketbase": "^0.25.1",
 		"radix-icons-svelte": "^1.2.1",
-		"sqlite3": "^5.1.7",
 		"three": "^0.173.0"
 	}
 }
