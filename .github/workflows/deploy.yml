@@ -40,15 +40,15 @@ jobs:
         run: npm ci
 
       - name: Build SvelteKit app (Custom Domain)
-        if: github.event.inputs.deployment_type != 'github_pages'
+        if: github.event.inputs.deployment_type == 'custom_domain'
         run: npm run build
 
       - name: Build SvelteKit app (GitHub Pages)
-        if: github.event.inputs.deployment_type == 'github_pages'
+        if: github.event.inputs.deployment_type == 'github_pages' || github.event_name == 'push'
         run: GITHUB_PAGES=true npm run build
 
       - name: Remove CNAME for GitHub Pages deployment
-        if: github.event.inputs.deployment_type == 'github_pages'
+        if: github.event.inputs.deployment_type == 'github_pages' || github.event_name == 'push'
         run: rm -f build/CNAME
 
       - name: Setup Pages
