@@ -1,5 +1,6 @@
 <script>
 	import PageTitle from '$lib/components/page-title.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <div>
@@ -18,7 +19,7 @@
 			</p>
 		</div>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			<a href="/allaccess" class="group">
+			<a href="{base}/allaccess" class="group">
 				<div class="relative overflow-hidden rounded-lg border bg-background p-2 hover:border-primary transition-colors">
 					<div class="flex flex-col items-center gap-4 p-6">
 						<img 
@@ -50,7 +51,7 @@
 				</div>
 			</a>
 
-			<a href="/claim/darkblock" class="group">
+			<a href="{base}/claim/darkblock" class="group">
 				<div class="relative overflow-hidden rounded-lg border bg-background p-2 hover:border-primary transition-colors">
 					<div class="flex flex-col items-center gap-4 p-6">
 						<img 

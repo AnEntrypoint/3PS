@@ -6,6 +6,7 @@
 	import FootCard from './(components)/FootCard.svelte';
 	import Partners from './(components)/Partners.svelte';
 	import World from './(components)/World.svelte';
+	import { base } from '$app/paths';
 	// import Mints from './(components)/Mints.svelte';
 	// import Stats from './(components)/Stats.svelte';
 
@@ -210,14 +211,14 @@
 					size="lg"
 					class="bg-white/10 backdrop-blur hover:bg-white/20"
 				>
-					<a href="/events">View Upcoming Events</a>
+					<a href="{base}/events">View Upcoming Events</a>
 				</Button>
 				<Button
 					variant="outline"
 					size="lg"
 					class="border-white/10 bg-white/5 text-white hover:bg-white/10"
 				>
-					<a href="/contact">Host an Event</a>
+					<a href="{base}/contact">Host an Event</a>
 				</Button>
 			</div>
 		</div>

@@ -5,6 +5,7 @@
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import LightSwitch from '$lib/components/light-switch.svelte';
 	import SearchForm from '$lib/components/search-form.svelte';
+	import { base } from '$app/paths';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 	const data = {
@@ -13,19 +14,19 @@
 				items: [
 					{
 						title: 'Home',
-						url: '/home'
+						url: `${base}/home`
 					},
 					{
 						title: 'About',
-						url: '/about'
+						url: `${base}/about`
 					},
 					{
 						title: 'Services',
-						url: '/services'
+						url: `${base}/services`
 					},
 					{
 						title: 'Contact',
-						url: '/contact'
+						url: `${base}/contact`
 					}
 				]
 			},
@@ -35,15 +36,15 @@
 				items: [
 					{
 						title: 'Roster',
-						url: '/roster'
+						url: `${base}/roster`
 					},
 					{
 						title: 'Events',
-						url: '/events'
+						url: `${base}/events`
 					},
 					{
 						title: 'Blog',
-						url: '/blog'
+						url: `${base}/blog`
 					}
 					// {
 					// 	title: 'Claim',
@@ -71,7 +72,7 @@
 
 <Sidebar.Root {...restProps} bind:ref variant="floating">
 	<Sidebar.Header>
-		<a href="/">
+		<a href="{base}/">
 			<div class="flex items-center justify-between px-4">
 				<h1 class="text-2xl font-bold">
 					Third Planet
