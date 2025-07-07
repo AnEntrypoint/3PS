@@ -1,5 +1,6 @@
 <script>
-	const third_planet = '/images/logo-b.png';
+	import { base } from '$app/paths';
+	const third_planet = `${base}/images/logo-b.png`;
 	const currentYear = new Date().getFullYear();
 </script>
 

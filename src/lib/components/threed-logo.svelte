@@ -7,12 +7,13 @@ Command: npx @threlte/gltf@2.0.3 new3PSlogo.glb -k -u -s -T
   import { Group } from 'three'
   import { T, forwardEventHandlers } from '@threlte/core'
   import { useGltf, useGltfAnimations, useSuspense } from '@threlte/extras'
+  import { base } from '$app/paths'
 
   export const ref = new Group()
 
   const suspend = useSuspense()
 
-  const gltf = suspend(useGltf('/models/new3PSlogo-transformed.glb', { useDraco: true }))
+  const gltf = suspend(useGltf(`${base}/models/new3PSlogo-transformed.glb`, { useDraco: true }))
   export const { actions, mixer } = useGltfAnimations(gltf, ref)
   $: $actions['orbit']?.play()
   const component = forwardEventHandlers()
