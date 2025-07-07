@@ -9,6 +9,7 @@ Command: npx @threlte/gltf@3.0.0 pass.glb -k -u -s -t
 	import type { Snippet } from 'svelte';
 	import { T, type Props } from '@threlte/core';
 	import { useGltf, useSuspense } from '@threlte/extras';
+	import { base } from '$app/paths';
 
 	let {
 		fallback,
@@ -36,7 +37,7 @@ Command: npx @threlte/gltf@3.0.0 pass.glb -k -u -s -t
 		};
 	};
 
-	const gltf = suspend(useGltf<GLTFResult>('/models/pass.glb'));
+	const gltf = suspend(useGltf<GLTFResult>(`${base}/models/pass.glb`));
 </script>
 
 <T.Group bind:ref dispose={false} {...props}>

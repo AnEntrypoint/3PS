@@ -9,6 +9,7 @@ Command: npx @threlte/gltf@3.0.0 planet.glb -k -u -s -t
   import type { Snippet } from 'svelte'
   import { T, type Props } from '@threlte/core'
   import { useGltf, useGltfAnimations, useSuspense, useDraco } from '@threlte/extras'
+  import { base } from '$app/paths'
 
   let {
     fallback,
@@ -42,7 +43,7 @@ Command: npx @threlte/gltf@3.0.0 planet.glb -k -u -s -t
     }
   }
 
-  const gltf = suspend(useGltf<GLTFResult>('/models/planet.glb', { dracoLoader }))
+  const gltf = suspend(useGltf<GLTFResult>(`${base}/models/planet.glb`, { dracoLoader }))
 
   export const { actions, mixer } = useGltfAnimations<ActionName>(gltf, ref)
   const action = $derived($actions?.SphereAction)

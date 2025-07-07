@@ -4,7 +4,8 @@
 	import MusicianSocial from './MusicianSocial.svelte';
 	import { buttonVariants } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';
-	const third_planet = '/images/logo-b.png';
+	import { base } from '$app/paths';
+	const third_planet = `${base}/images/logo-b.png`;
 	export let musician;
 	let randomIndex = Math.floor(Math.random() * musician?.pic.length);
 	const cGlass =
