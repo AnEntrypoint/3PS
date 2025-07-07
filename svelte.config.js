@@ -1,5 +1,9 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+// Determine if we're building for GitHub Pages subdirectory
+const dev = process.argv.includes('dev');
+const ghPages = process.env.GITHUB_PAGES === 'true';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,16 +12,20 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
-		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
+		// adapter-static for GitHub Pages deployment
 		adapter: adapter({
-			out: 'build',
-			precompress: true,
-			envPrefix: 'PUBLIC_'
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			precompress: false,
+			strict: true
 		}),
 		files: {
 			assets: 'static'
+		},
+		// Set base path for GitHub Pages subdirectory when not using custom domain
+		paths: {
+			base: dev ? '' : ghPages ? '/3PS' : ''
 		}
 	}
 };
