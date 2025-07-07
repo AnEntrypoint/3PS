@@ -16,7 +16,7 @@
 			<Tooltip.Root>
 				<Tooltip.Trigger>
 					<Avatar.Root class="w-24 h-24 md:w-12 md:h-12">
-						<Avatar.Image src={partner?.pic} alt={partner?.name} />
+						<Avatar.Image src={partner?.pic?.[0]} alt={partner?.name} />
 					</Avatar.Root>
 				</Tooltip.Trigger>
 				<Tooltip.Content>
